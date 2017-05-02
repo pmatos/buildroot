@@ -1154,6 +1154,7 @@ menu "Tcl libraries/modules"
 	source "package/tcllib/Config.in"
 endmenu
 endif
+	source "package/jsconly/Config.in"
 endmenu
 
 menu "Libraries"

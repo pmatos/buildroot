@@ -1,0 +1,14 @@
+
+config BR2_PACKAGE_JSC
+	bool "jsc"
+	help
+	  Just the standalone jsc interpreter from the WebKit project.
+	  https://webkit.org/
+
+if BR2_PACKAGE_JSC
+config BR2_PACKAGE_JSC_DEBUG
+        bool "Build jsc in debug mode"
+        default n
+        help
+          Make a debug build of JavaScriptCore and the jsc interpreter
+endif
