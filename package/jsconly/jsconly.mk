@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-JSCONLY_VERSION = 9d6044421981653d5c5a021dc0fbd44918b907b3
+JSCONLY_VERSION = 5d863eb4e193c80576bd30e1dfb9b70ea7c50f6c
 JSCONLY_SITE = $(call github,WebKit,webkit,$(JSCONLY_VERSION))
 JSCONLY_INSTALL_STAGING = YES
 JSCONLY_DEPENDENCIES = host-bison host-cmake host-flex host-gperf host-ruby icu pcre
@@ -17,12 +17,14 @@ ifeq ($(BR2_PACKAGE_JSC_DEBUG),y)
 JSCONLY_BUILD_JSC_ARGS += --debug
 JSCONLY_BUILD_DIR_NAME = Debug
 JSCONLY_CMAKE_ARGS += \
+        -DENABLE_STATIC_JSC=ON \
 	-DCMAKE_C_FLAGS_DEBUG='-g -O0' \
 	-DCMAKE_CXX_FLAGS_DEBUG='-g -O0'
 else
 JSCONLY_BUILD_JSC_ARGS += --release
 JSCONLY_BUILD_DIR_NAME = Release
 JSCONLY_CMAKE_ARGS += \
+        -DENABLE_STATIC_JSC=ON \
 	-DCMAKE_C_FLAGS_RELEASE='-O2 -g -DNDEBUG' \
 	-DCMAKE_CXX_FLAGS_RELEASE='-O2 -g -DNDEBUG'
 endif
