@@ -590,6 +590,7 @@ endif
 	source "package/haserl/Config.in"
 	source "package/jamvm/Config.in"
 	source "package/jimtcl/Config.in"
+	source "package/jsconly/Config.in"
 	source "package/lua/Config.in"
 	source "package/luainterpreter/Config.in"
 	source "package/luajit/Config.in"
@@ -1154,7 +1155,6 @@ menu "Tcl libraries/modules"
 	source "package/tcllib/Config.in"
 endmenu
 endif
-	source "package/jsconly/Config.in"
 endmenu
 
 menu "Libraries"
