@@ -1,6 +1,7 @@
-
 config BR2_PACKAGE_JSC
 	bool "jsc"
+	select BR2_PACKAGE_ICU
+	select BR2_PACKAGE_PCRE
 	help
 	  Just the standalone jsc interpreter from the WebKit project.
 	  https://webkit.org/
