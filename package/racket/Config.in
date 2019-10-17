@@ -1,0 +1,29 @@
+config BR2_PACKAGE_RACKET
+       bool "racket"
+       
+       select BR2_PACKAGE_LIBFFI
+       select BR2_PACKAGE_GMP
+       select BR2_RACKET_3M
+       
+       help
+	Racket is a general-purpose programming language as well as the
+	world’s first ecosystem for language-oriented programming.
+
+	https://www.racket-lang.org
+
+if BR2_PACKAGE_RACKET
+
+config BR2_PACKAGE_RACKET_CGC
+       bool "Racket CGC"
+       help
+	Build Racket with Senora GC
+
+config BR2_PACKAGE_RACKET_3M
+       bool "Racket 3M"
+       help
+	Build Racket with 3M GC (default)
+
+config BR2_PACKAGE_RACKET_CS
+       bool "Racket CS"
+       help
+	Build Racket on Chez
